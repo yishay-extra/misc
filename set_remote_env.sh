@@ -51,7 +51,7 @@ EOF
 
 vi -es -u $HOME_PATH/.vimrc -i NONE -c "PlugInstall" -c "qa"
 
-cat <<EOF | tee $HOME_PATH/.tmux.conf
+cat <<EOF | sudo tee $HOME_PATH/.tmux.conf
 #### COLOUR (Solarized 256)
 
 # default statusbar colors
@@ -87,3 +87,4 @@ set-window-option -g window-status-bell-style fg=colour235,bg=colour160 #base02,
 set -g default-terminal "screen-256color"
 EOF
 
+source $HOME_DIR/.bashrc
