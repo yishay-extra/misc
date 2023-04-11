@@ -7,8 +7,11 @@ alias ll='ls -la'
 alias cl='clear'
 alias di="docker images"
 alias dps="docker ps -a"
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias _="sudo "
 EOF
-source $HOME_PATH/.bashrc
 
 curl -fLo $HOME_PATH/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
