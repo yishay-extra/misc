@@ -90,4 +90,4 @@ set-window-option -g window-status-bell-style fg=colour235,bg=colour160 #base02,
 set -g default-terminal "screen-256color"
 EOF
 
-source $HOME_DIR/.bashrc
+source $HOME_PATH/.bashrc
