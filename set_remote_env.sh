@@ -7,6 +7,7 @@ alias ll='ls -la'
 alias cl='clear'
 alias di="docker images"
 alias dps="docker ps -a"
+alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
@@ -52,8 +53,6 @@ set background=dark
 colorscheme gruvbox8
 EOF
 
-vi -es -u $HOME_PATH/.vimrc -i NONE -c "PlugInstall" -c "qa"
-
 cat <<EOF | sudo tee $HOME_PATH/.tmux.conf
 #### COLOUR (Solarized 256)
 
@@ -91,3 +90,4 @@ set -g default-terminal "screen-256color"
 EOF
 
 source $HOME_PATH/.bashrc
+vi -es -u $HOME_PATH/.vimrc -i NONE -c "PlugInstall" -c "qa"
