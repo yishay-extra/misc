@@ -27,14 +27,24 @@ set encoding=utf-8
 set fileencoding=utf-8
 set path+=**
 set wildmenu
+set belloff=all
 syntax on
+filetype plugin on
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 "###### MAPS #######
 
-command! W :w
-command! Q :q
-command! Wq :wq
-command! QQ :q!
+map \n :set invnumber<CR>
+map \nr :set invnumber invrelativenumber<CR>
+map \j 10j<CR>
+map \k 10k<CR>
+map \w :w<CR>
+map \ww :wq<CR>
+map \q :q<CR>
+map \qq :q!<CR>
 
 "###### PLUGINS ######
 
@@ -45,12 +55,36 @@ Plug 'mtdl9/vim-log-highlighting'
 Plug 'LunarWatcher/auto-pairs'
 Plug 'maxboisvert/vim-simple-complete'
 Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'vimwiki/vimwiki'
+Plug 'yegappan/mru'
+Plug 'maxbrunsfeld/vim-yankstack'
 call plug#end()
 
 "####### COLORS #######
 
 set background=dark
 colorscheme gruvbox8
+
+"####### PlUGINS CONFIG #######
+
+let g:NERDTreeWinPos = "right"
+let NERDTreeShowHidden=0
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let g:NERDTreeWinSize=35
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark<Space>
+map <leader>nf :NERDTreeFind<cr>
+
+let g:vimwiki_list = [{'path': '~/vimwiki/'}]
+let g:vimwiki_hl_headers=1
+let g:vimwiki_hl_cb_checked=1
+
+let g:yankstack_yank_keys = ['y', 'd']
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+let MRU_Max_Entries = 100
+map <leader>f :MRU<CR>
 EOF
 
 cat <<EOF | sudo tee $HOME_PATH/.tmux.conf
