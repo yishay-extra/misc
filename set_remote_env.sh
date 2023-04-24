@@ -37,14 +37,21 @@ set expandtab
 
 "###### MAPS #######
 
-map \n :set invnumber<CR>
-map \nr :set invnumber invrelativenumber<CR>
-map \j 10j<CR>
-map \k 10k<CR>
-map \w :w<CR>
-map \ww :wq<CR>
-map \q :q<CR>
-map \qq :q!<CR>
+map <leader>n :set invnumber<CR>
+map <leader>nr :set invnumber invrelativenumber<CR>
+map <leader>j 10j<CR>
+map <leader>k 10k<CR>
+map <leader>w :w<CR>
+map <leader>ww :wq<CR>
+map <leader>q :q<CR>
+map <leader>qq :q!<CR>
+map <leader>c ^vg_"*y
+map <leader>cb {v}"*y
+map <leader>cw wbvwh"*yw
+map <leader>ca ggvG$"*yw
+
+nnoremap <s-up> 10k<CR>
+nnoremap <s-down> 10j<CR>
 
 "###### PLUGINS ######
 
@@ -58,6 +65,7 @@ Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vimwiki/vimwiki'
 Plug 'yegappan/mru'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 "####### COLORS #######
