@@ -46,12 +46,12 @@ map <leader>ww :wq<CR>
 map <leader>q :q<CR>
 map <leader>qq :q!<CR>
 map <leader>c ^vg_"*y
-map <leader>cb {v}"*y
+map <leader>cb (v)k$"*y
 map <leader>cw wbvwh"*yw
 map <leader>ca ggvG$"*yw
 
-nnoremap <s-up> 10k<CR>
-nnoremap <s-down> 10j<CR>
+nnoremap <C-[> 10k<CR>
+nnoremap <C-]> 10j<CR>
 
 "###### PLUGINS ######
 
