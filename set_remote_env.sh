@@ -3,10 +3,15 @@
 HOME_PATH=${1:-~}
 
 cat <<EOF | tee -a $HOME_PATH/.bashrc
+export TERM=xterm-256color
 alias ll='ls -la'
 alias cl='clear'
 alias di="docker images"
+alias de="docker exec "
+alias deit="docker exec -it "
 alias dps="docker ps -a"
+alias tx="tmux"
+alias txa="tmux attach"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -39,8 +44,6 @@ set expandtab
 
 map <leader>n :set invnumber<CR>
 map <leader>nr :set invnumber invrelativenumber<CR>
-map <leader>j 10j<CR>
-map <leader>k 10k<CR>
 map <leader>w :w<CR>
 map <leader>ww :wq<CR>
 map <leader>q :q<CR>
@@ -50,8 +53,8 @@ map <leader>cb (v)k$"*y
 map <leader>cw wbvwh"*yw
 map <leader>ca ggvG$"*yw
 
-nnoremap <C-[> 10k<CR>
-nnoremap <C-]> 10j<CR>
+nnoremap <S-Up> 10k
+nnoremap <S-Down> 10j
 
 "###### PLUGINS ######
 
@@ -74,6 +77,9 @@ set background=dark
 colorscheme gruvbox8
 
 "####### PlUGINS CONFIG #######
+
+set complete-=t
+set complete-=i
 
 let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden=0
